@@ -109,13 +109,13 @@ def create_model(neurons=50, filters1=10, filters2=20, kernalsize=5, drop_rate=0
   model2.compile(loss='categorical_crossentropy',optimizer=optimizer,metrics=['accuracy'])
   return model2
 
-batch_size = Integer(low=50, high=100,name='batch_size')
-epochs = Integer(low=80, high=100,name='epochs')
-num_dense_layers = Integer(low=1, high=5,name='num_dense_layers')
-filters1 = Integer(low=2, high=8,name='filters1')
-filters2 = Integer(low=2, high=8,name='filters2')
-kernalsize = Integer(low=2, high=16, name='kernalsize')
-neurons = Integer(low=40, high=60,name='neurons')
+batch_size = Integer(low=10, high=300,name='batch_size')
+epochs = Integer(low=10, high=500,name='epochs')
+num_dense_layers = Integer(low=1, high=10,name='num_dense_layers')
+filters1 = Integer(low=2, high=64,name='filters1')
+filters2 = Integer(low=2, high=64,name='filters2')
+kernalsize = Integer(low=2, high=32, name='kernalsize')
+neurons = Integer(low=10, high=100,name='neurons')
 drop_rate = Real(0.15, 0.2, name='drop_rate')
 lr = Real(1e-4, 1e-1, name='lr')
 param_grid = [neurons, filters1, filters2, kernalsize, drop_rate, num_dense_layers, lr, batch_size, epochs]
